@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Gelemeuf Portfolio</title>
+	<title>TH0L3F</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -39,13 +39,19 @@
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="about.html">About</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Mes projets<b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+							<?php
+						    		$myfile = fopen("liste_projets.txt", "r") or die("Unable to open file!");
+								while(!feof($myfile)) {
+						    			$val = fgets($myfile);
+						    			echo $val;
+								}
+						    		fclose($myfile);
+						    	?>
 						</ul>
 					</li>
-					<li><a href="contact.html">Contact</a></li>
+					<li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -58,7 +64,7 @@
 			<div class="row">
 				<h1 class="lead">SALUT, JE SUIS THOMAS LEFRANC</h1>
 				<p class="tagline">Etudiant en systèmes embarqués à <a href="https://Polytech-lille.fr/">Polytech Lille</a></p>
-				<p><a class="btn btn-action btn-lg" role="button">Plus d'informations</a></p>
+				<p><a class="btn btn-action btn-lg" role="button">A propos de moi</a></p>
 			</div>
 		</div>
 	</header>
@@ -69,7 +75,7 @@
 		<br> <br>
 		<h2 class="thin">Un aperçu de mes projets</h2>
 		<p class="text-muted">
-			<a href:"">Clique ici pour voir l'ensemble de mes projets</a>
+			<a href="portfolio.html">Clique ici</a>
 		</p>
 	</div>
 	<!-- /Intro-->
@@ -179,10 +185,8 @@
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
 						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
-								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
+							<p>+33 06-52-61-97-55<br>
+								<a href="mailto:#">thomaslefranc33@gmail.com</a>
 							</p>	
 						</div>
 					</div>
@@ -191,10 +195,7 @@
 						<h3 class="widget-title">Follow me</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons">
-								<a href=""><i class="fa fa-twitter fa-2"></i></a>
-								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
-								<a href=""><i class="fa fa-github fa-2"></i></a>
-								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+								<a href="https://github.com/Gelemeuf"><i class="fa fa-github fa-2"></i></a>
 							</p>	
 						</div>
 					</div>
@@ -221,7 +222,6 @@
 								<a href="#">Home</a> | 
 								<a href="about.html">About</a> |
 								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
 							</p>
 						</div>
 					</div>
