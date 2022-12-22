@@ -1,0 +1,14 @@
+#img_logo{
+	max-width: 95%;
+        max-height: 95%;
+	margin-top: 5%;
+        display: block; /* remove extra space below image */
+}
+
+#div_impair{
+	color: #FFD700;
+	background-color: #293133;
+	display: flex;
+	margin: 0px;
+	text-align: center;
+}
