@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;}
 
 body {
+	background-color: #464646;
 	line-height: 1;
 }
 
@@ -99,7 +100,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #242943;
+		background: #303030;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1957,7 +1958,7 @@ input, select, textarea {
 
 		select option {
 			color: #ffffff;
-			background: #242943;
+			background: #303030;
 		}
 
 		select:focus::-ms-value {
@@ -2043,7 +2044,7 @@ input, select, textarea {
 			background: #ffffff;
 			border-color: #9bf1ff;
 			content: '\f00c';
-			color: #242943;
+			color: #303030;
 		}
 
 		input[type="checkbox"]:focus + label:before,
@@ -2135,7 +2136,7 @@ input, select, textarea {
 		.icon.alt:before {
 			background-color: #ffffff;
 			border-radius: 100%;
-			color: #242943;
+			color: #303030;
 			display: inline-block;
 			height: 2em;
 			line-height: 2em;
@@ -2398,12 +2399,12 @@ input, select, textarea {
 
 				ul.pagination li > .page.active {
 					background-color: #ffffff;
-					color: #242943;
+					color: #303030;
 				}
 
 					ul.pagination li > .page.active:hover {
 						background-color: #9bf1ff;
-						color: #242943 !important;
+						color: #303030 !important;
 					}
 
 					ul.pagination li > .page.active:active {
@@ -2673,7 +2674,7 @@ input, select, textarea {
 		.button.primary {
 			background-color: #ffffff;
 			box-shadow: none;
-			color: #242943;
+			color: #303030;
 		}
 
 			input[type="submit"].primary:hover, input[type="submit"].primary:active,
@@ -2686,7 +2687,7 @@ input, select, textarea {
 			.button.primary:hover,
 			.button.primary:active {
 				background-color: #9bf1ff;
-				color: #242943 !important;
+				color: #303030 !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2792,10 +2793,11 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.85;
+				opacity: 0.8;
 				position: absolute;
 				width: 100%;
 				z-index: 2;
+				color:black;
 			}
 
 			.tiles article:after {
@@ -2808,10 +2810,12 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 				z-index: 1;
+				color: black;
 			}
 
 			.tiles article:hover:before {
-				opacity: 0;
+				opacity: 1;
+				color: black;
 			}
 
 			.tiles article.is-transitioning {
@@ -2831,27 +2835,27 @@ input, select, textarea {
 			}
 
 			.tiles article:nth-child(6n - 5):before {
-				background-color: #6fc3df;
+				background-color: #ffd700;/*Definition des couleurs des cases*/
 			}
 
 			.tiles article:nth-child(6n - 4):before {
-				background-color: #8d82c4;
+				background-color: #ffbd1b;
 			}
 
 			.tiles article:nth-child(6n - 3):before {
-				background-color: #ec8d81;
+				background-color: #ffbd1b;
 			}
 
 			.tiles article:nth-child(6n - 2):before {
-				background-color: #e7b788;
+				background-color: #ffd700;
 			}
 
 			.tiles article:nth-child(6n - 1):before {
-				background-color: #8ea9e8;
+				background-color: #ffbd1b;
 			}
 
 			.tiles article:nth-child(6n):before {
-				background-color: #87c5a4;
+				background-color: #ffbd1b;
 			}
 
 		@media screen and (max-width: 1280px) {
@@ -2938,7 +2942,7 @@ input, select, textarea {
 			-webkit-flex-direction: row;
 			-ms-flex-direction: row;
 			flex-direction: row;
-			background-color: #2e3450;
+			background-color: #202020;
 		}
 
 			.spotlights > section > .image {
@@ -3114,7 +3118,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #2a2f4a;
+		background-color: #404040;
 		box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
 		cursor: default;
 		font-weight: 600;
@@ -3145,7 +3149,7 @@ input, select, textarea {
 				-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				background-color: #ffffff;
-				color: #242943;
+				color: #303030;
 				display: inline-block;
 				line-height: 1.65em;
 				margin-right: 0.325em;
@@ -3398,6 +3402,7 @@ input, select, textarea {
 		min-height: 22em;
 		position: relative;
 		top: -3.25em;
+		color: #FFD700;
 	}
 
 		#banner:after {
@@ -3410,12 +3415,12 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			pointer-events: none;
-			background-color: #242943;
+			background-color: #303030;
 			content: '';
 			display: block;
 			height: 100%;
 			left: 0;
-			opacity: 0.85;
+			opacity: 0.2;
 			position: absolute;
 			top: 0;
 			width: 100%;
@@ -3424,6 +3429,7 @@ input, select, textarea {
 
 		#banner h1 {
 			font-size: 3.25em;
+			color : #FFD700;
 		}
 
 		#banner > .inner {
@@ -3434,6 +3440,7 @@ input, select, textarea {
 			padding: 0 !important;
 			position: relative;
 			z-index: 2;
+			color: #FFD700;
 		}
 
 			#banner > .inner .image {
@@ -3487,35 +3494,35 @@ input, select, textarea {
 		}
 
 			#banner.major.alt {
-				opacity: 0.25;
+				opacity: 1;
 			}
 
 		#banner.style1:after {
-			background-color: #6fc3df;
+			background-color: #2E2E2E;
 		}
 
 		#banner.style2:after {
-			background-color: #8d82c4;
+			background-color: #2E2E2E;
 		}
 
 		#banner.style3:after {
-			background-color: #ec8d81;
+			background-color: #2E2E2E;
 		}
 
 		#banner.style4:after {
-			background-color: #e7b788;
+			background-color: #2E2E2E;
 		}
 
 		#banner.style5:after {
-			background-color: #8ea9e8;
+			background-color: #2E2E2E;
 		}
 
 		#banner.style6:after {
-			background-color: #87c5a4;
+			background-color: #2E2E2E;
 		}
 
 		body.is-preload #banner:after {
-			opacity: 1.0;
+			opacity: 0.8;
 		}
 
 		body.is-preload #banner > .inner {
@@ -3527,7 +3534,7 @@ input, select, textarea {
 			-webkit-transform: translateX(-0.5em);
 			-ms-transform: translateX(-0.5em);
 			transform: translateX(-0.5em);
-			opacity: 0;
+			opacity: 0.5;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -3589,7 +3596,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		background-color: #2a2f4a;
+		background-color: #404040;
 	}
 
 		#main > * {
@@ -3926,7 +3933,7 @@ input, select, textarea {
 			}
 
 	body.is-ie #menu {
-		background: rgba(42, 47, 74, 0.975);
+		background: #464646;/*rgba(42, 47, 74, 0.975);*/
 	}
 
 	body.is-menu-visible #wrapper {
