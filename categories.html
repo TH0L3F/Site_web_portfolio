@@ -64,46 +64,45 @@
 										<h2>Sed amet aliquam</h2>
 									</header>
 									<?php
-										// Read in the CSV file
-										$csv = array_map('str_getcsv', file('file.csv'));
+									$csv = array_map('str_getcsv', file('projets/file.csv'));
 
-										// Create an associative array to store the projects by category
-										$projectsByCategory = [];
+									// Create an associative array to store the projects by category
+									$projectsByCategory = [];
 
-										// Iterate through the CSV file and add each project to the appropriate category
-										foreach ($csv as $line) {
-										    // Split the categories string into an array
-										    $categories = explode(',', $line[2]);
-										    // Add the project to each category
-										    foreach ($categories as $category) {
-											// If the category does not yet exist in the array, create it
-											if (!array_key_exists($category, $projectsByCategory)) {
-											    $projectsByCategory[$category] = [];
-											}
-											// Add the project to the category
-											$projectsByCategory[$category][] = $line;
-										    }
-										}
+									// Iterate through the CSV file and add each project to the appropriate category
+									foreach ($csv as $line) {
+										// Split the categories string into an array
+								    		$categories = explode(':', $line[2]);
+								    		// Add the project to each category
+								    		foreach ($categories as $category) {
+								        		// If the category does not yet exist in the array, create it
+								        		if (!array_key_exists($category, $projectsByCategory)) {
+								            			$projectsByCategory[$category] = [];
+								        		}
+								        		// Add the project to the category
+								        		$projectsByCategory[$category][] = $line;
+								    		}
+								    	}
 
-										// Sort the categories alphabetically
-										ksort($projectsByCategory);
+									// Sort the categories alphabetically
+									ksort($projectsByCategory);
 
-										// Print out the projects by category as a list of links
-										echo '<ul>';
-										foreach ($projectsByCategory as $category => $projects) {
-										    // Print out the category name
-										    echo '<li>' . $category;
-										    // Print out the projects in the category as a list
-										    echo '<ul>';
-										    foreach ($projects as $project) {
-											// Create a link to the HTML page
-											$link = './' . $project[1] . '/' . $project[1] . '.html';
-											echo '<li><a href="' . $link . '">' . $project[0] . '</a></li>';
-										    }
-										    echo '</ul>';
-										    echo '</li>';
-										}
-										echo '</ul>';
+									// Print out the projects by category as a list of links
+									echo '<ul>';
+									foreach ($projectsByCategory as $category => $projects) {
+								    		// Print out the category name
+								    		echo '<li>' . $category;
+								    		// Print out the projects in the category as a list
+								    		echo '<ul>';
+								    		foreach ($projects as $project) {
+								        		// Create a link to the HTML page
+								        		$link = './' . $project[1] . '/' . $project[1] . '.html';
+								        		echo '<li><a href="' . $link . '">' . $project[0] . '</a></li>';
+								    		}
+								    		echo '</ul>';
+								    		echo '</li>';
+							    		}
+							    		echo '</ul>';
 									?>
 								</div>
 							</section>

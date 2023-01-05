@@ -1,2 +1,0 @@
-project_name|project_number|categories
-"exemple project";0;mechanic,electronic
