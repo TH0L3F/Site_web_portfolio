@@ -11,7 +11,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <link rel="stylesheet" href="assets/css/main.css" />
                 <link rel="stylesheet" href="assets/css/personal.css"/>
-                <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+                <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
         </head>
         <body class="is-preload">
 
@@ -96,7 +96,7 @@
 								    		echo '<ul>';
 								    		foreach ($projects as $project) {
 								        		// Create a link to the HTML page
-								        		$link = './' . $project[1] . '/' . $project[1] . '.html';
+								        		$link = 'projets/' . $project[1] . '/' . $project[1] . '.html';
 								        		echo '<li><a href="' . $link . '">' . $project[0] . '</a></li>';
 								    		}
 								    		echo '</ul>';
