@@ -11,7 +11,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
                 <link rel="stylesheet" href="assets/css/main.css" />
                 <link rel="stylesheet" href="assets/css/personal.css"/>
-                <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+                <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
         </head>
         <body class="is-preload">
 
@@ -56,14 +56,20 @@
 
 				<!-- Main -->
 					<div id="main">
-
-						<!-- One -->
-							<section id="one">
-								<div class="inner">
-									<header class="major">
-										<h2>Sed amet aliquam</h2>
-									</header>
-									<?php
+                                                <!-- One -->
+                                                        <section id="one">
+                                                                <div class="inner">
+                                                                        <header class="major">
+                                                                                <h2>Sed amet aliquam</h2>
+                                                                        </header>
+                                                                </div>
+                                                        </section>
+						
+						<!-- Two -->
+							<section id="two" class="spotlights">
+								
+								<?php
+									// Read in the CSV file
 									$csv = array_map('str_getcsv', file('projets/file.csv'));
 
 									// Create an associative array to store the projects by category
@@ -72,132 +78,52 @@
 									// Iterate through the CSV file and add each project to the appropriate category
 									foreach ($csv as $line) {
 										// Split the categories string into an array
-								    		$categories = explode(':', $line[2]);
-								    		// Add the project to each category
-								    		foreach ($categories as $category) {
-								        		// If the category does not yet exist in the array, create it
-								        		if (!array_key_exists($category, $projectsByCategory)) {
-								            			$projectsByCategory[$category] = [];
-								        		}
-								        		// Add the project to the category
-								        		$projectsByCategory[$category][] = $line;
-								    		}
-								    	}
+    										$categories = explode(':', $line[2]);
+    										// Add the project to each category
+    										foreach ($categories as $category) {
+        										// If the category does not yet exist in the array, create it
+        										if (!array_key_exists($category, $projectsByCategory)) {
+        											$projectsByCategory[$category] = [];
+        										}
+        										// Add the project to the category
+        										$projectsByCategory[$category][] = $line;
+    										}
+									}
 
-									// Sort the categories alphabetically
+									// Sort the categories alphabetically	
 									ksort($projectsByCategory);
 
 									// Print out the projects by category as a list of links
-									echo '<ul>';
 									foreach ($projectsByCategory as $category => $projects) {
-								    		// Print out the category name
-								    		echo '<li>' . $category;
-								    		// Print out the projects in the category as a list
-								    		echo '<ul>';
-								    		foreach ($projects as $project) {
-								        		// Create a link to the HTML page
-								        		$link = 'projets/' . $project[1] . '/' . $project[1] . '.html';
-								        		echo '<li><a href="' . $link . '">' . $project[0] . '</a></li>';
-								    		}
-								    		echo '</ul>';
-								    		echo '</li>';
-							    		}
-							    		echo '</ul>';
-									?>
-								</div>
-							</section>
 
-						<!-- Two -->
-							<section id="two" class="spotlights">
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic.jpg" alt="" data-position="center center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Orci maecenas</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="../generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic.jpg" alt="" data-position="top center" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Rhoncus magna</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-								<section>
-									<a href="generic.html" class="image">
-										<img src="images/pic.jpg" alt="" data-position="25% 25%" />
-									</a>
-									<div class="content">
-										<div class="inner">
-											<header class="major">
-												<h3>Sed nunc ligula</h3>
-											</header>
-											<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
-											<ul class="actions">
-												<li><a href="generic.html" class="button">Learn more</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-							</section>
+    										// Print out the category name wrapped in a section element
+										echo '<section>';
+											$link_image = 'images/' . $category . '.png';
+											echo '<a href="' . $link_image . '" class="image">';
+												echo '<img src="' . $link_image .'" alt="" data-position="top top" >';	
+											echo '</a>';		
 
-						<!-- Three -->
-							<section id="three">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
+											echo '<div class="content">';
+												echo '<div class="inner">';
+													echo '<header class="major">';
+														echo '<h3>' . $category . '</h3>';
+													echo '</header>';
 
+    													// Print out the projects in the category as a list
+    													echo '<ul>';	    
+    													foreach ($projects as $project) {
+        													// Create a link to the HTML page
+        													$link = 'projets/' . $project[1] . '/' . $project[1] . '.html';
+        													echo '<li><a href="' . $link . '">' . $project[0] . '</a></li>';
+													}
+    													echo '</ul>';
+												echo '</div>';
+											echo '</div>';
+										echo '</section>';
+									}
+								?>
+							</section>
 					</div>
-
-                                <!-- Contact -->
-                                        <section id="contact">
-                                                <div class="inner">
-                                                        <section class="split">
-                                                                <section>
-                                                                        <div class="contact-method">
-                                                                                <span class="icon solid alt fa-envelope"></span>
-                                                                                <h3>Email</h3>
-                                                                                <span>tholef.pro@gmail.com</span>
-                                                                        </div>
-                                                                </section>
-                                                        </section>
-                                                        <section class="split">
-                                                                <section>
-                                                                        <div class="contact-method">
-                                                                                <span class="icon solid alt fa-phone"></span>
-                                                                                <h3>Phone</h3>
-                                                                                <span>(+33) 0652619755</span>
-                                                                        </div>
-                                                                </section>
-                                                        </section>
-                                                </div>
-                                        </section>
-
                                 <!-- Footer -->
                                         <footer id="footer">
                                                 <div class="inner">

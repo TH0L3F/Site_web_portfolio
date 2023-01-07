@@ -1,4 +1,5 @@
 ErrorDocument 404 https://www.tholef.fr/index.html
 
-RewriteEngine On
-RewriteRule ^(article|index)(/.*)?$ $1.php
+AddType text/css .css
+AddType image/jpeg .jpg
+AddType image/png .png
