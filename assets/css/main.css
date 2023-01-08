@@ -1798,6 +1798,15 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			header.texte_majuscule > :first-child:after{
+				content: '';
+				background-color : #404040;
+				display: block;
+				height: 2px;
+				margin: 0.325em 0 0.5em 0;
+				width: 100%;
+			}
+
 		header.major > p {
 			font-size: 0.7em;
 			font-weight: 600;
@@ -2224,6 +2233,20 @@ input, select, textarea {
 
 			}
 
+/* resize image categorie page */
+
+		.image_cat{
+			padding-top: 10%;
+			padding-bottom:10%;
+			padding-right:10%;
+			padding-left:10%;
+		}
+/* passer le texte des categories en majuscule */
+
+		.texte_majuscule{
+			text-transform : uppercase;
+		}
+		
 /* List */
 
 	ol {
@@ -2976,6 +2999,8 @@ input, select, textarea {
 
 	.spotlights {
 		border-top: 0 !important;
+		opacity : 0.9;
+		color: black;
 	}
 
 		.spotlights + * {
@@ -3015,7 +3040,7 @@ input, select, textarea {
 					display: block;
 					height: 100%;
 					left: 0;
-					opacity: 0;
+					opacity: 0.01;
 					position: absolute;
 					top: 0;
 					width: 100%;
@@ -3053,7 +3078,7 @@ input, select, textarea {
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
 				flex-direction: row-reverse;
-				background-color: #000000;
+				background-color: #ffd700;
 			}
 
 				.spotlights > section:nth-child(2n) > .content {
@@ -3665,6 +3690,10 @@ input, select, textarea {
 				margin: 0 auto;
 				max-width: 65em;
 				width: calc(100% - 6em);
+			}
+			
+			#main > * > .inner > p {
+				color: white;
 			}
 
 				@media screen and (max-width: 736px) {
