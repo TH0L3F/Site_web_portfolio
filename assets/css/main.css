@@ -2954,6 +2954,24 @@ input, select, textarea {
 			margin: 0 0 0.5em 0;
 		}
 
+/*image du cv*/
+	
+	.image_cv{
+		display: block;
+		width: 70%;
+		height: auto;
+		margin-left:auto;
+		margin-right:auto;
+		padding:10px;
+	}
+	
+	@media screen and (max-width: 1680px) {
+		.image_cv{
+			width:100%
+		}
+	}
+
+
 /* Spotlights */
 
 	.spotlights {
